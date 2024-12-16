@@ -14,14 +14,15 @@ const Clock = () => {
 
   
     };
+    const months = ["Januray","February" , "March" , "April", "May","June","July","August","September" , "October" , "November", "December"]
     function getDate(){
         const date = new Date();
         const day = date.getDate().toString().padStart(2,"0")
-        const month = (date.getMonth() + 1).toString().padStart(2 ,"0   ")
-        
+        const monthIndex = (date.getMonth())
+    
         const year = date.getFullYear()
-  
-        setData(`${day}/${month}/${year}`)
+ 
+        setData(`${day}-${months[monthIndex]}-${year}`)
     }
     getDate()
 
